@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Card, CardTitle } from '@material-ui/core/Card';
-import '../static/HomePage.css';
+import Card  from '@material-ui/core/Card';
+import '../static/main.css';
 
 export class HomePage extends Component {
     render(){
         return(
-            <div>
-                <p>Hello</p>
-            </div>
+            <Card className="container">
+                Imran
+            </Card>
         )
     }
 }

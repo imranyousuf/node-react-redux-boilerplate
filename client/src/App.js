@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import { HomePage } from './_screens/HomePage';
 
+import  LoginForm  from './_components/LoginForm';
+
+
 import './App.css';
 
 class App extends Component {
@@ -28,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <p className="App-intro">{this.state.response}</p>
-        <HomePage />
+        <LoginForm />
       </div>
     );
   }
