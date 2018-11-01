@@ -4,20 +4,7 @@ import Card from "@material-ui/core/Card/Card";
 
 export default class Person extends Component{
 
-
-
-    _deleteHandler = () => {
-        console.log("This is just a test")
-    };
-
-    _changeNameHandler = (name) => {
-
-    }
-
     render(){
-
-
-
 
         return(
 
@@ -27,7 +14,7 @@ export default class Person extends Component{
                     <p>{this.props.age}</p>
 
                     <button
-                    onClick={this.props.changed}
+                    onClick={this.props.clicked}
                     >
                     Delete
                     </button>

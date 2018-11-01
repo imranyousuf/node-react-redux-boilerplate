@@ -17,6 +17,9 @@ export default class LoginForm extends Component {
         listPeople: false
     };
 
+
+
+
     _listPersonsHandler = () => {
         if (this.state.listPeople === false){
             this.setState(
@@ -35,6 +38,17 @@ export default class LoginForm extends Component {
     };
 
 
+
+    _deletePersonsHandler = (deleteId) => {
+        const newPersonState = this.state.persons.filter(person => person.id !== deleteId);
+        console.log("Deleted ID:"+ deleteId);
+
+        this.setState({
+            persons: newPersonState
+        })
+
+    };
+
     render () {
 
         let showPerson = null;
@@ -43,7 +57,11 @@ export default class LoginForm extends Component {
             showPerson = (
                 this.state.persons.map((person,key) => {
                     return (
-                        <Person name={person.name} age={person.age} key={person.id}/>
+                        <Person
+                            name={person.name}
+                            age={person.age}
+                            key={person.id}
+                            clicked={() => this._deletePersonsHandler(person.id)}/>
                     )
                 })
             );
@@ -57,7 +75,7 @@ export default class LoginForm extends Component {
             <div>
                 <Person name="Imran Yousuf" age="26" />
 
-                <Person name="Ray Nui" age="35" changed={() => console.log("This is just a test")} />
+                <Person name="Ray Nui" age="35" clicked={() => console.log("This is just a test")} />
 
                 <button onClick={this._listPersonsHandler}>Test</button>
 
