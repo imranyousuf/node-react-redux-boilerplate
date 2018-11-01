@@ -14,7 +14,7 @@ export default class LoginForm extends Component {
             {name: "Yem", age: 41, occup: "engineer", id:965},
             {name: "Ray", age: 39, occup: "engineer", id:658}
         ],
-        listPeople: false
+        listPeople: true
     };
 
 
@@ -53,6 +53,8 @@ export default class LoginForm extends Component {
 
         let showPerson = null;
 
+        let buttonStyle=null;
+
         if(this.state.listPeople){
             showPerson = (
                 this.state.persons.map((person,key) => {
@@ -65,19 +67,18 @@ export default class LoginForm extends Component {
                     )
                 })
             );
+            buttonStyle = 'buttonClicked';
         }else{
             showPerson = null;
+            buttonStyle = 'buttonNotClicked'
         }
 
 
 
         return(
             <div>
-                <Person name="Imran Yousuf" age="26" />
 
-                <Person name="Ray Nui" age="35" clicked={() => console.log("This is just a test")} />
-
-                <button onClick={this._listPersonsHandler}>Test</button>
+                <button className={buttonStyle} onClick={this._listPersonsHandler}>Test</button>
 
                 {showPerson}
             </div>
