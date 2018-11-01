@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import { HomePage } from './_screens/HomePage';
-
 import  LoginForm  from './_components/LoginForm';
 
 
